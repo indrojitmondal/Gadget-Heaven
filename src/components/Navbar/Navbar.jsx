@@ -50,12 +50,12 @@ const Navbar = () => {
       
     </>
     return (
-        <div className= {` ${path==='/'?'text-white  rounded-3xl bg-primary border-[7px] border-b1':''}  `}>
+        <div className= {`  ${path==='/'?'text-white  rounded-3xl pb-10 bg-primary border-[7px] border-b1':''}  `}>
 
            {/* text-white rounded-3xl bg-primary border-[7px] border-b1 */}
            
 
-            <div className="navbar-section p-10 flex justify-between">
+            <div className=" navbar-section p-10 flex justify-between">
                 
               
                 <div className="">
@@ -116,7 +116,22 @@ const Navbar = () => {
 
             </div>
 
-        </div>
+            </div>
+
+            { path==='/' && 
+
+<div className=''>
+
+<div className='px-20'>
+     <img src={bannerImage} className='h-[400px] w-full' alt="" />
+</div>
+
+</div>
+
+            }
+
+
+            
 
            
 
