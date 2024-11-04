@@ -17,13 +17,19 @@ const ProductDetail = () => {
     const { product_id } = useParams();
     console.log('ProductDetails OK: ', allProducts);
     console.log('Id:', product_id);
+
+    let idx= product_id;
+   
+    
     const product = allProducts.find(p => p.product_id == product_id);
+   
     console.log('Product', product);
     const { product_title, product_image, price, description, Specification, availability, rating } = product;
 
     const p_spec = { Specification };
 
     const specifications = p_spec.Specification;
+    
 
 
 
@@ -84,14 +90,14 @@ const ProductDetail = () => {
 
                     <button onClick={() => {
 
-                        setCart((prev) => [...prev, 'Indrojit'])
+                        setCart((prev) => [...prev, product_id])
 
 
                     }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Cart  <BsCart3></BsCart3>  </div> </button>
 
                     <button onClick={() => {
 
-                        setWish((prev) => [...prev, 'Indrojit'])
+                        setWish((prev) => [...prev, product_id])
 
 
                     }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Wishlist  <IoIosHeartEmpty />  </div> </button>

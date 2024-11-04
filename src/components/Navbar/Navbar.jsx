@@ -17,7 +17,7 @@ const Navbar = () => {
     const {cart}= useContext(cartContext);
     const {wish}= useContext(WishContext);
 
-    console.log('Cart length',cart.length);
+    console.log('Cart:',cart);
     console.log('Wish length',wish.length);
     const handleCart =(x)=>{
         console.log(x)

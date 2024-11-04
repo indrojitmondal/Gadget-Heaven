@@ -3,8 +3,8 @@ import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 
-export const cartContext = createContext(null);
-export const WishContext = createContext(null);
+export const cartContext = createContext([]);
+export const WishContext = createContext([]);
 
 const Root = () => {
     const [cart, setCart]= useState([]);
