@@ -10,6 +10,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import Navbar from "../components/Navbar/Navbar";
 import Statistics from "../components/Statistics/Statistics";
 import Dashboard from "../components/Dashboard/Dashboard";
+import Home from "../components/Home/Home";
 
 const routes = createBrowserRouter([
     {
@@ -18,11 +19,10 @@ const routes = createBrowserRouter([
       errorElement: <ErrorPage></ErrorPage>,
       children:[
         {
-
-            path:'/',
-            element: <Navbar></Navbar>
-
-        },
+          path: '/',
+          element: <Home></Home>
+       },
+        
         {
             path: '/statistics',
             element: <Statistics></Statistics>
