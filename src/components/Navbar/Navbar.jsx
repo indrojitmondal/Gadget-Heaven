@@ -14,7 +14,7 @@ const Navbar = () => {
     const location = useLocation();
 
 
-    console.log(location.pathname);
+    console.log('Path:',location.pathname);
     const path = location.pathname;
 
 
@@ -37,6 +37,10 @@ const Navbar = () => {
             setHeading('Dashboard');
 
         }
+      else if (path.includes('/product'))
+      {
+        setHeading("Product Details")
+      }
 
 
     }, [path])
@@ -87,7 +91,7 @@ const Navbar = () => {
 
 
 
-
+                  
 
                     <h1 className='text-center text-2xl font-bold'>{heading}</h1>
 

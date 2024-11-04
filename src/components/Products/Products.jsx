@@ -12,7 +12,10 @@ const Products = () => {
     useEffect( ()=>{
         fetch('allProducts.json')
         .then ( res=> res=res.json())
-        .then (data => setAllProducts(data)
+        .then (data =>
+            { setAllProducts(data) 
+            setActiveProducts(data)
+            }
         );
     },[])
 
@@ -36,12 +39,12 @@ const Products = () => {
             <section className='grid grid-cols-12 gap-8'>
 
 
-                <div className="sidebar col-span-2 border border-gray-300 rounded-xl p-4">
+                <div className="sidebar col-span-2 ">
 
                     {/* border border-primary px-3 py-2 bg-primary text-white */}
 
                     
-                   <div className=''> 
+                   <div className='border border-gray-300 rounded-xl p-4'> 
                       <h2 className='border text-center border-primary rounded-xl px-3 py-2 bg-primary text-white'>All Products</h2> 
 
                        <div className='pt-5 flex flex-col gap-3'>
