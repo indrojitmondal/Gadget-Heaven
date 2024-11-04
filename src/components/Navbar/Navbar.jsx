@@ -6,7 +6,7 @@ import bannerImage from '../../assets/banner.jpg'
 import { BsCart3 } from "react-icons/bs";
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Products from '../Products/Products';
-import { cartContext } from '../Root/Root';
+import { WishContext, cartContext } from '../Root/Root';
 import { IoIosHeartEmpty } from "react-icons/io";
 // export const cartContext = createContext(0);
 
@@ -15,8 +15,10 @@ import { IoIosHeartEmpty } from "react-icons/io";
 const Navbar = () => {
     const [heading, setHeading] = useState('');
     const {cart}= useContext(cartContext);
+    const {wish}= useContext(WishContext);
 
     console.log('Cart length',cart.length);
+    console.log('Wish length',wish.length);
     const handleCart =(x)=>{
         console.log(x)
         
@@ -96,8 +98,14 @@ const Navbar = () => {
                              <BsCart3 />
                          </div>
                        
-                        {/* <i className="fa-solid fa-heart text-black"></i> */}
-                        <IoIosHeartEmpty />
+                         <div className='flex items-center gap-1'>
+                             {/* <h3>1</h3> */}
+                             <sup>{wish.length? wish.length: ''}</sup>
+                             <IoIosHeartEmpty />
+                         </div>
+                        
+                        
+                       
                   
                     </div>
 

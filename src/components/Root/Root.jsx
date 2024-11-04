@@ -4,20 +4,21 @@ import Footer from '../Footer/Footer';
 import { Outlet } from 'react-router-dom';
 
 export const cartContext = createContext(null);
+export const WishContext = createContext(null);
 
 const Root = () => {
     const [cart, setCart]= useState([]);
+    const [wish, setWish]= useState([]);
     return (
-        <div className=''>
-            <cartContext.Provider value={{cart,setCart}}>
-                 
-            <Navbar></Navbar>
-            <Outlet></Outlet>
-            <Footer></Footer>
-
-            </cartContext.Provider>
-            
-        </div>
+        <cartContext.Provider value={{ cart, setCart }}>
+        <WishContext.Provider value={{ wish, setWish }}>
+            <div>
+                <Navbar />
+                <Outlet />
+                <Footer />
+            </div>
+        </WishContext.Provider>
+    </cartContext.Provider>
     );
 };
 

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { useLoaderData, useParams } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
-import { cartContext } from '../Root/Root';
+import { WishContext, cartContext } from '../Root/Root';
 import { BsCart3 } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
 
@@ -11,6 +11,7 @@ import { IoIosHeartEmpty } from "react-icons/io";
 const ProductDetail = () => {
 
     const { cart, setCart } = useContext(cartContext);
+    const { wish, setWish } = useContext(WishContext);
 
     const allProducts = useLoaderData();
     const { product_id } = useParams();
@@ -90,7 +91,7 @@ const ProductDetail = () => {
 
                     <button onClick={() => {
 
-                        setCart((prev) => [...prev, 'Indrojit'])
+                        setWish((prev) => [...prev, 'Indrojit'])
 
 
                     }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Wishlist  <IoIosHeartEmpty />  </div> </button>
