@@ -115,7 +115,9 @@ const Navbar = () => {
 
                 {/* banner */}
 
-                <div className='bg-primary py-5 text-white'>
+                {
+                    path !=='/dashboard' &&
+                    <div className='bg-primary py-5 text-white'>
 
 
 
@@ -141,25 +143,15 @@ const Navbar = () => {
 
 
                         }
-                        {
-                            path === '/dashboard' && <>
-
-                                <button className='bg-white  border border-white px-4 rounded-xl py-2 text-primary'>Cart</button>
-
-
-                                <button className='bg-white  border border-white px-4 rounded-xl py-2 text-primary'>Wishlist</button>
-
-
-                            </>
-
-                        }
+                        
 
 
 
 
                     </div>
 
-                </div>
+                     </div>
+                }
 
                 {path === '/' &&
 
