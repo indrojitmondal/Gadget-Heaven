@@ -7,6 +7,7 @@ import { BsCart3 } from "react-icons/bs";
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Products from '../Products/Products';
 import { cartContext } from '../Root/Root';
+import { IoIosHeartEmpty } from "react-icons/io";
 // export const cartContext = createContext(0);
 
 
@@ -91,11 +92,13 @@ const Navbar = () => {
                         {/* <a className="btn">Button</a>  */}
                          <div className='flex items-center gap-1'>
                              {/* <h3>1</h3> */}
-                             <sup>{cart? cart: ''}</sup>
+                             <sup>{cart.length? cart.length: ''}</sup>
                              <BsCart3 />
                          </div>
                        
-                        <i className="fa-solid fa-heart"></i>
+                        {/* <i className="fa-solid fa-heart text-black"></i> */}
+                        <IoIosHeartEmpty />
+                  
                     </div>
 
 

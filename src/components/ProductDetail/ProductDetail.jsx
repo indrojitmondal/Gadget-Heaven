@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 
-import {  useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useParams } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
 import { cartContext } from '../Root/Root';
-
+import { BsCart3 } from "react-icons/bs";
+import { IoIosHeartEmpty } from "react-icons/io";
 
 
 
 const ProductDetail = () => {
 
-    const {cart,setCart}= useContext(cartContext);
+    const { cart, setCart } = useContext(cartContext);
 
     const allProducts = useLoaderData();
     const { product_id } = useParams();
@@ -23,11 +24,11 @@ const ProductDetail = () => {
 
     const specifications = p_spec.Specification;
 
-    
 
 
 
-    
+
+
 
     //  const [cart,setCart] = useContext(cartContext);
     return (
@@ -39,7 +40,7 @@ const ProductDetail = () => {
             </div>
 
             <div className='col-span-7'>
-                <h2 className='font-bold'>{product_title}</h2>
+                <h2 className='text-lg font-bold'>{product_title}</h2>
                 <h3>Price: ${price}</h3>
 
                 <button className='btn'> {availability ? 'In Store' : 'Out of Stack'}  </button>
@@ -55,7 +56,7 @@ const ProductDetail = () => {
                 </ol>
                 <h3>Rating ⬛</h3>
 
-                
+
 
                 {/* <ReactStars
                     count={5}
@@ -66,26 +67,41 @@ const ProductDetail = () => {
 
                 <div className='flex items-center gap-3'>
 
-               
-                <ReactStars count={5}
-                    
-                    size={24}
-                    activeColor="#ffd700" 
-                    value={rating}
+
+                    <ReactStars count={5}
+
+                        size={24}
+                        activeColor="#ffd700"
+                        value={rating}
                     >   </ReactStars>
-                {rating}
+                    {rating}
 
                 </div>
 
-                <button onClick={()=>{
-               
-                 setCart((prev)=>[...prev,'Indrojit'])
-                    
 
-                }} className='btn'>Add To Cart</button>
+                <div className='flex items-center gap-4'> 
 
-       
-              
+                    <button onClick={() => {
+
+                        setCart((prev) => [...prev, 'Indrojit'])
+
+
+                    }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Cart  <BsCart3></BsCart3>  </div> </button>
+
+                    <button onClick={() => {
+
+                        setCart((prev) => [...prev, 'Indrojit'])
+
+
+                    }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Wishlist  <IoIosHeartEmpty />  </div> </button>
+
+
+
+                </div>
+
+
+
+
             </div>
         </div>
     );
