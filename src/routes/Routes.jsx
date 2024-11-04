@@ -11,6 +11,7 @@ import Navbar from "../components/Navbar/Navbar";
 import Statistics from "../components/Statistics/Statistics";
 import Dashboard from "../components/Dashboard/Dashboard";
 import Home from "../components/Home/Home";
+import Products from "../components/Products/Products";
 
 const routes = createBrowserRouter([
     {
@@ -20,7 +21,8 @@ const routes = createBrowserRouter([
       children:[
         {
           path: '/',
-          element: <Home></Home>
+          element: <Home></Home>,
+         
        },
         
         {
