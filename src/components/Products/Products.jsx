@@ -65,7 +65,7 @@ const Products = () => {
                     <div className='grid grid-cols-3 gap-5'>
 
                         {
-                            activeProducts.map( product => <Product key={product.product_id} product={product} ></Product>)
+                            activeProducts.map( product => <Product   key={product.product_id} product={product} ></Product>)
                         }
 
 

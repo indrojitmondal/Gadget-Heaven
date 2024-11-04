@@ -1,9 +1,15 @@
-import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
+
+import {  useLoaderData, useParams } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
+import { cartContext } from '../Root/Root';
+
+
 
 
 const ProductDetail = () => {
+
+    const {cart,setCart}= useContext(cartContext);
 
     const allProducts = useLoaderData();
     const { product_id } = useParams();
@@ -21,9 +27,9 @@ const ProductDetail = () => {
 
 
 
+    
 
-
-
+    //  const [cart,setCart] = useContext(cartContext);
     return (
         <div className='w-7/12 mx-auto grid grid-cols-12 gap-5 items-center'>
             <div className='col-span-5'>
@@ -33,7 +39,7 @@ const ProductDetail = () => {
             </div>
 
             <div className='col-span-7'>
-                <h2>{product_title}</h2>
+                <h2 className='font-bold'>{product_title}</h2>
                 <h3>Price: ${price}</h3>
 
                 <button className='btn'> {availability ? 'In Store' : 'Out of Stack'}  </button>
@@ -70,6 +76,13 @@ const ProductDetail = () => {
                 {rating}
 
                 </div>
+
+                <button onClick={()=>{
+               
+                 setCart((prev)=>[...prev,'Indrojit'])
+                    
+
+                }} className='btn'>Add To Cart</button>
 
        
               

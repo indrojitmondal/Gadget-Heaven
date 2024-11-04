@@ -1,15 +1,27 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 import bannerImage from '../../assets/banner.jpg'
 
 import { BsCart3 } from "react-icons/bs";
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import Products from '../Products/Products';
+import { cartContext } from '../Root/Root';
+// export const cartContext = createContext(0);
+
 
 
 const Navbar = () => {
     const [heading, setHeading] = useState('');
+    const {cart}= useContext(cartContext);
+
+    console.log('Cart length',cart.length);
+    const handleCart =(x)=>{
+        console.log(x)
+        
+    }
+
+   
 
     const location = useLocation();
 
@@ -77,7 +89,12 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center gap-4 pr-4">
                         {/* <a className="btn">Button</a>  */}
-                        <BsCart3 />
+                         <div className='flex items-center gap-1'>
+                             {/* <h3>1</h3> */}
+                             <sup>{cart? cart: ''}</sup>
+                             <BsCart3 />
+                         </div>
+                       
                         <i className="fa-solid fa-heart"></i>
                     </div>
 
@@ -167,11 +184,17 @@ const Navbar = () => {
 
 
 
+                
+
             </div> 
             <div id='products' className=' pt-4'>
 
                 { 
-                   path==='/' &&  <Products></Products>
+                   path==='/' &&
+                 
+                      <Products  ></Products>
+                  
+                    
                 }
 
                
