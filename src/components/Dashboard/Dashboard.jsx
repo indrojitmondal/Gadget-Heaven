@@ -43,23 +43,21 @@ const Dashboard = () => {
 
     //   const product = allProducts.find(p => p.product_id == 1);
     //  console.log('Product',product);
-    const cartProduct = [];
-    //    const [cartProduct, setCartProduct]= useState([]);
+    //const cartProduct = [];
+     const [cartProduct, setCartProduct]= useState([]);
 
 
-    for (const id of cart) {
-        //   const p= allProducts.find(product=> product.product_id == id);
-        //   console.log('Product',p);
-        const product = allProducts?.find(p => parseInt(p.product_id) === parseInt(id));
 
-        if (product) {
-            cartProduct.push(product);
-            // const newCartP= [...cartProduct]
-            //  setCartProduct([...cartProduct,product]);
-
+     useEffect(() => {
+        const newCartProducts = [];
+        for (const id of cart) {
+            const product = allProducts.find(p => parseInt(p.product_id) === parseInt(id));
+            if (product) {
+                newCartProducts.push(product);
+            }
         }
-
-    }
+        setCartProduct(newCartProducts); // Update all at once after the loop
+    }, [cart, allProducts]);
 
 
 
@@ -169,7 +167,7 @@ const Dashboard = () => {
                 <p className='text-center'>Total: 0</p>
                
          
-                <button className='mt-3 border w-full rounded-[32px] px-4 py-2 border-gray-300 bg-gray-300 text-center font-bold'  onClick={closeModal}>Close</button>
+                <button className='mt-3 border w-full rounded-[32px] px-4 py-2 border-gray-200 bg-gray-200 text-center font-bold'  onClick={closeModal}>Close</button>
                 
                
             </Modal>
