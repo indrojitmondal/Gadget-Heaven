@@ -42,10 +42,7 @@ const Dashboard = () => {
     console.log('Type', typeof allProducts);
     console.log(Array.isArray(allProducts));
 
-    //   const product = allProducts.find(p => p.product_id == 1);
-    //  console.log('Product',product);
-    //const cartProduct = [];
-     const [cartProduct, setCartProduct]= useState([]);
+    const [cartProduct, setCartProduct]= useState([]);
 
 
 
@@ -59,6 +56,24 @@ const Dashboard = () => {
         }
         setCartProduct(newCartProducts); // Update all at once after the loop
     }, [cart, allProducts]);
+
+    // for wishList 
+
+    const [wishProduct, setWishProduct]= useState([]);
+
+
+
+    useEffect(() => {
+       const newWishProducts = [];
+       for (const id of wish) {
+           const product = allProducts.find(p => parseInt(p.product_id) === parseInt(id));
+           if (product) {
+               newWishProducts.push(product);
+           }
+       }
+       setWishProduct(newWishProducts); // Update all at once after the loop
+   }, [wish, allProducts]);
+
 
 
 
@@ -90,6 +105,15 @@ const Dashboard = () => {
         navigate('/');
 
     } 
+
+
+    const handleAddToCart = (x)=>{
+
+        console.log("Hello from add to cart",x);
+        setCart([...cart,x]);
+        console.log(cart.length);
+        // setCart((prev) => [...prev, product_id])
+    }
 
 
    
@@ -143,7 +167,8 @@ const Dashboard = () => {
                     cardActive &&
                     <>
                         <div className='px-10 pt-3 flex items-center justify-between'>
-                            <h2 className='font-bold text-xl'>Cart: {cartProduct.length}</h2>
+                            {/* <p>Cart: {cartProduct.length}</p> */}
+                            <h2 className='font-bold text-xl'>Cart</h2>
                             <div className='flex items-center gap-5'>
                                 <h1 className='font-bold text-lg'>Total cost: {totalCost}</h1>
                                 <button className='btn'>Short by Price</button>
@@ -176,7 +201,7 @@ const Dashboard = () => {
 
                     <div>
                             {
-                                cartProduct.map(product => <WishList key={product.product_id} product={product} ></WishList>)
+                                wishProduct.map(product => <WishList key={product.product_id} handleAddToCart={handleAddToCart} product={product} ></WishList>)
                             }
 
                         </div>
