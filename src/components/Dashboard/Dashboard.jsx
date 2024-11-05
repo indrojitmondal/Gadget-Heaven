@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { WishContext, cartContext } from '../Root/Root';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import Cart from '../Cart/Cart';
 import ReactDOM from 'react-dom';
 
@@ -78,7 +78,7 @@ const Dashboard = () => {
     
     
     const openModal = () => setIsModalOpen(true);
-    
+    const navigate = useNavigate();
     
     const closeModal = () =>{
 
@@ -86,6 +86,7 @@ const Dashboard = () => {
         setTotalCost(0);
         setCartProduct([]);
         setCart([]);
+        navigate('/');
 
     } 
 
