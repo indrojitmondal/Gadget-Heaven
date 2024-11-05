@@ -95,12 +95,15 @@ const ProductDetail = () => {
 
                     }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Cart  <BsCart3></BsCart3>  </div> </button>
 
-                    <button onClick={() => {
+                    <button onClick=
+                    {
+                        !wish.find(p_id=> p_id==product_id)?
+                        () => {
 
                         setWish((prev) => [...prev, product_id])
 
 
-                    }} className=' '>  <div className='flex items-center gap-1'>   <IoIosHeartEmpty className='text-2xl' />  </div> </button>
+                    }: ()=>{   }} className={`${wish.find(p_id=> p_id==product_id)? 'text-red-800 disabled': ''}`} >  <div className='flex items-center gap-1'>   <IoIosHeartEmpty className='text-2xl' />  </div> </button>
 
 
 
