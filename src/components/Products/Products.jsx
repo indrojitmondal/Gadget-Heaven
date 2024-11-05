@@ -2,6 +2,7 @@ import { data } from 'autoprefixer';
 import React, { useEffect, useState } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Product from '../Product/Product';
+import { Helmet } from 'react-helmet-async';
 
 const Products = () => {
 
@@ -33,7 +34,15 @@ const Products = () => {
 
     }
     return (
-        <div className='p-10'>
+        <>
+        <Helmet>
+                {/* <title>Gadget | Dashboard</title> */}
+                {/* <meta name="description" content="Description of this page" /> */}
+                {/* <link rel="icon" type="image/x-icon" href="/path/to/your/favicon.ico" /> */}
+                <link rel="shortcut icon" href="https://i.ibb.co.com/hVqQxsG/favicon-16x16.png" type="image/x-icon" />
+
+            </Helmet>
+         <div className='p-10'>
             <h1 className='text-2xl font-bold text-center'>Explore Cutting-Edge Gadgets</h1>
 
             <section className='grid grid-cols-12 gap-8'>
@@ -75,6 +84,7 @@ const Products = () => {
 
             </section>
         </div>
+        </>
     );
 };
 

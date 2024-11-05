@@ -9,6 +9,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import Products from '../Products/Products';
 import { WishContext, cartContext } from '../Root/Root';
 import { IoIosHeartEmpty } from "react-icons/io";
+import { Helmet } from 'react-helmet-async';
 // export const cartContext = createContext(0);
 
 
@@ -118,6 +119,13 @@ const Navbar = () => {
 
     return (
         <>
+            <Helmet>
+                {/* <title>Gadget | Dashboard</title> */}
+                {/* <meta name="description" content="Description of this page" /> */}
+                {/* <link rel="icon" type="image/x-icon" href="/path/to/your/favicon.ico" /> */}
+                <link rel="shortcut icon" href="https://i.ibb.co.com/hVqQxsG/favicon-16x16.png" type="image/x-icon" />
+
+            </Helmet>
             <div className={`  ${path === '/' ? 'text-white  rounded-3xl pb-10 bg-primary border-[7px] border-b1' : ''}  `}>
 
                 {/* text-white rounded-3xl bg-primary border-[7px] border-b1 */}
