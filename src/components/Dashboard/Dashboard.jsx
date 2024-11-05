@@ -193,7 +193,12 @@ const Dashboard = () => {
                             <h2 className='font-bold text-xl'>Cart</h2>
                             <div className='flex items-center gap-5'>
                                 <h1 className='font-bold text-lg'>Total cost: {totalCost}</h1>
-                                <button className='btn'>Short by Price</button>
+                                <button 
+                                  onClick={()=>{
+                                    const sortCarts= [...cartProduct].sort((a,b)=>(b.price - a.price));
+                                    setCartProduct(sortCarts);
+                                  }} 
+                                 className='btn'>Short by Price</button>
                                 <button onClick={openModal} className='btn'>Purchase</button>
                             </div>
                         </div>
