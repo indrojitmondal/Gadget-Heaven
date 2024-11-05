@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 
 import modalImage from '../../assets/Group.png'
 import Modal from '../Modal/Modal';
+import WishList from '../WishList/WishList';
 
 
 const Dashboard = () => {
@@ -163,6 +164,7 @@ const Dashboard = () => {
             <div>
                 {
                     wishActive &&
+                    <>
                     <div className='px-10 pt-3 flex items-center justify-between'>
                         <h2 className='font-bold text-xl'>WishList</h2>
                         {/* <div className='flex items-center gap-5'>
@@ -171,6 +173,16 @@ const Dashboard = () => {
                             <button className='btn'>Purchase</button>
                          </div> */}
                     </div>
+
+                    <div>
+                            {
+                                cartProduct.map(product => <WishList key={product.product_id} product={product} ></WishList>)
+                            }
+
+                        </div>
+
+
+                    </>
                 }
 
             </div>
