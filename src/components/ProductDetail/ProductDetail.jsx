@@ -39,7 +39,7 @@ const ProductDetail = () => {
 
     //  const [cart,setCart] = useContext(cartContext);
     return (
-        <div className='w-7/12 mx-auto grid grid-cols-12 gap-5 items-center'>
+        <div className='w-7/12  border border-primary border-t-0 mx-auto grid grid-cols-12 gap-5 items-center'>
             <div className='col-span-5'>
 
                 <img className='h-[400px]' src={product_image} alt={product_title} />
@@ -100,7 +100,7 @@ const ProductDetail = () => {
                         setWish((prev) => [...prev, product_id])
 
 
-                    }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Wishlist  <IoIosHeartEmpty />  </div> </button>
+                    }} className=' '>  <div className='flex items-center gap-1'>   <IoIosHeartEmpty className='text-2xl' />  </div> </button>
 
 
 
