@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom';
 import modalImage from '../../assets/Group.png'
 import Modal from '../Modal/Modal';
 import WishList from '../WishList/WishList';
+import { toast } from 'react-toastify';
 
 
 const Dashboard = () => {
@@ -112,6 +113,9 @@ const Dashboard = () => {
         console.log("Hello from add to cart",x);
         setCart([...cart,x]);
         console.log(cart.length);
+        const product= allProducts.find(p=>p.product_id==x);
+        const productTitle= product.product_title; 
+        toast(`${productTitle} is added to your cart list.`);
         // setCart((prev) => [...prev, product_id])
     }
 
@@ -121,6 +125,8 @@ const Dashboard = () => {
       const newCarts= cart.filter(p => p != x );
         console.log('What happen:',newCarts);
          setCart(newCarts);
+         
+         
     }
 
     const handleRemoveWish = (x)=>{

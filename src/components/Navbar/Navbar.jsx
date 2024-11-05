@@ -137,7 +137,7 @@ const Navbar = () => {
                     <div className="">
 
 
-                        <h1 className='text-xl'>Gadget Heaven</h1>
+                        <h1 className='text-xl font-bold'>Gadget Heaven</h1>
                     </div>
                     <div className="flex">
                         <ul className=" flex gap-10 px-1">
@@ -145,18 +145,18 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <div className="flex items-center gap-4 pr-4">
+                    <div className="flex text-black items-center gap-4 pr-4">
                         {/* <a className="btn">Button</a>  */}
-                        <div className='flex items-center gap-1'>
+                        <div className='flex border border-white bg-white p-2 rounded-[50%] items-center gap-1'>
                             {/* <h3>1</h3> */}
                             <sup>{cart?.length ? cart.length : ''}</sup>
-                            <BsCart3 />
+                            <BsCart3 className='font-bold' />
                         </div>
 
-                        <div className='flex items-center gap-1'>
+                        <div className='flex border border-white bg-white p-2  rounded-[50%] items-center gap-1'>
                             {/* <h3>1</h3> */}
                             <sup>{wish?.length ? wish.length : ''}</sup>
-                            <IoIosHeartEmpty />
+                            <IoIosHeartEmpty className='font-bold' />
                         </div>
 
 
@@ -191,7 +191,7 @@ const Navbar = () => {
                                 <a href="#products">
                                     <button
 
-                                        className='bg-white  border border-white px-4 rounded-xl py-2 text-primary'>Shop Now
+                                        className='bg-white  border border-white px-4 rounded-[32px] py-2 text-primary'>Shop Now
                                     </button>
 
                                 </a>

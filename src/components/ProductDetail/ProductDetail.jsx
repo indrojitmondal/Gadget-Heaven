@@ -5,7 +5,7 @@ import ReactStars from "react-rating-stars-component";
 import { WishContext, cartContext } from '../Root/Root';
 import { BsCart3 } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
-
+import { toast } from "react-toastify";
 
 
 const ProductDetail = () => {
@@ -90,7 +90,9 @@ const ProductDetail = () => {
 
                     <button onClick={() => {
 
-                        setCart((prev) => [...prev, product_id])
+                        setCart((prev) => [...prev, product_id]);
+                      
+                        toast(`${product_title} is added to your cart list.`);
 
 
                     }} className='bg-primary text-white border border-primary rounded-[32px] px-3 py-2 '>  <div className='flex items-center gap-1'> Add To Cart  <BsCart3></BsCart3>  </div> </button>
@@ -100,7 +102,8 @@ const ProductDetail = () => {
                         !wish.find(p_id=> p_id==product_id)?
                         () => {
 
-                        setWish((prev) => [...prev, product_id])
+                        setWish((prev) => [...prev, product_id]);
+                        toast(`${product_title} is added to your wish list.`);
 
 
                     }: ()=>{   }} className={`${wish.find(p_id=> p_id==product_id)? 'text-red-800 disabled': ''}`} >  <div className='flex items-center gap-1'>   <IoIosHeartEmpty className='text-2xl' />  </div> </button>
