@@ -63,13 +63,34 @@ const Dashboard = () => {
 
 
     console.log('CartProductOk:', cartProduct.length);
+    const [totalCost, setTotalCost]= useState(0);
+
+   useEffect(()=>{
+       console.log('Cost-length',cartProduct.length);
+       let cost=0;
+       const sum= cartProduct.reduce( (p,c)=>p+c.price,0);
+       console.log('Total Cost:',sum);
+       setTotalCost(sum);
+   },[cartProduct]);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    
+    
     const openModal = () => setIsModalOpen(true);
-    const closeModal = () => setIsModalOpen(false);
+    
+    
+    const closeModal = () =>{
+
+        setIsModalOpen(false);
+        setTotalCost(0);
+        setCartProduct([]);
+        setCart([]);
+
+    } 
 
 
+   
 
 
 
@@ -122,7 +143,7 @@ const Dashboard = () => {
                         <div className='px-10 pt-3 flex items-center justify-between'>
                             <h2 className='font-bold text-xl'>Cart: {cartProduct.length}</h2>
                             <div className='flex items-center gap-5'>
-                                <h1 className='font-bold text-lg'>Total cost: 999.99</h1>
+                                <h1 className='font-bold text-lg'>Total cost: {totalCost}</h1>
                                 <button className='btn'>Short by Price</button>
                                 <button onClick={openModal} className='btn'>Purchase</button>
                             </div>
@@ -164,7 +185,7 @@ const Dashboard = () => {
                  
                 <p className='text-center'>Thanks for purchasing</p>
                  
-                <p className='text-center'>Total: 0</p>
+                <p className='text-center'>Total: {totalCost}</p>
                
          
                 <button className='mt-3 border w-full rounded-[32px] px-4 py-2 border-gray-200 bg-gray-200 text-center font-bold'  onClick={closeModal}>Close</button>
