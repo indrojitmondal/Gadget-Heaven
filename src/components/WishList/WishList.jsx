@@ -1,7 +1,7 @@
 import React from 'react';
 import { TiDeleteOutline } from "react-icons/ti";
 
-const WishList = ({ product, handleAddToCart }) => {
+const WishList = ({ product, handleAddToCart, handleRemoveWish }) => {
     const { product_id, product_image, product_title, description, price } = product;
     return (
         <div className='m-10 rounded-xl px-5 py-3 border border-gray-200  flex items-center justify-between'>
@@ -19,7 +19,10 @@ const WishList = ({ product, handleAddToCart }) => {
 
                 </div>
             </div>
-            <button>
+            <button onClick={()=>
+            { handleRemoveWish(product_id)}
+            }  
+            >
             <TiDeleteOutline className='text-red-400 text-5xl' />
 
             </button>

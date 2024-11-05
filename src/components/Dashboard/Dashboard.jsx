@@ -115,6 +115,22 @@ const Dashboard = () => {
         // setCart((prev) => [...prev, product_id])
     }
 
+    const handleRemoveCart = (x)=>{
+        console.log('Hello from cart remove', x);
+        console.log("Carts:",cart);
+      const newCarts= cart.filter(p => p != x );
+        console.log('What happen:',newCarts);
+         setCart(newCarts);
+    }
+
+    const handleRemoveWish = (x)=>{
+
+        console.log('Hello from wish remove');
+        const newWishLists= wish.filter(p=>p !=x );
+        setWish(newWishLists);
+
+    }
+
 
    
 
@@ -177,7 +193,7 @@ const Dashboard = () => {
                         </div>
                         <div>
                             {
-                                cartProduct.map(product => <Cart key={product.product_id} product={product} ></Cart>)
+                                cartProduct.map( (product,idx) => <Cart key={idx} handleRemoveCart={handleRemoveCart} product={product} ></Cart>)
                             }
 
                         </div>
@@ -201,7 +217,7 @@ const Dashboard = () => {
 
                     <div>
                             {
-                                wishProduct.map(product => <WishList key={product.product_id} handleAddToCart={handleAddToCart} product={product} ></WishList>)
+                                wishProduct.map((product,idx) => <WishList key={idx} handleRemoveWish={handleRemoveWish} handleAddToCart={handleAddToCart} product={product} ></WishList>)
                             }
 
                         </div>
