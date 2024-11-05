@@ -186,7 +186,7 @@ const Dashboard = () => {
             </div>
             <div>
                 {
-                    cardActive &&
+                    (cardActive && totalCost>0) &&
                     <>
                         <div className='px-10 pt-3 flex items-center justify-between'>
                             {/* <p>Cart: {cartProduct.length}</p> */}
@@ -210,7 +210,7 @@ const Dashboard = () => {
 
             <div>
                 {
-                    wishActive &&
+                    (wishActive && wishProduct.length>0) &&
                     <>
                     <div className='px-10 pt-3 flex items-center justify-between'>
                         <h2 className='font-bold text-xl'>WishList</h2>
