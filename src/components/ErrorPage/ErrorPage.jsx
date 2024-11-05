@@ -1,9 +1,14 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 
 const ErrorPage = () => {
     return (
         <div>
-            <h3>Opps! Page not found</h3>
+              <Navbar></Navbar>
+              <Footer></Footer> 
+
+
         </div>
     );
 };

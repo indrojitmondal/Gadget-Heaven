@@ -14,22 +14,22 @@ import { IoIosHeartEmpty } from "react-icons/io";
 
 const Navbar = () => {
     const [heading, setHeading] = useState('');
-    const {cart}= useContext(cartContext);
-    const {wish}= useContext(WishContext);
+    const { cart } = useContext(cartContext);
+    const { wish } = useContext(WishContext);
 
-    console.log('Cart:',cart);
-    console.log('Wish length',wish.length);
-    const handleCart =(x)=>{
+    // console.log('Cart:', cart);
+    // console.log('Wish length', wish.length);
+    const handleCart = (x) => {
         console.log(x)
-        
+
     }
 
-   
+
 
     const location = useLocation();
 
 
-    console.log('Path:',location.pathname);
+    console.log('Path:', location.pathname);
     const path = location.pathname;
 
 
@@ -52,10 +52,9 @@ const Navbar = () => {
             setHeading('Dashboard');
 
         }
-      else if (path.includes('/product'))
-      {
-        setHeading("Product Details")
-      }
+        else if (path.includes('/product')) {
+            setHeading("Product Details")
+        }
 
 
     }, [path])
@@ -92,21 +91,21 @@ const Navbar = () => {
                     </div>
                     <div className="flex items-center gap-4 pr-4">
                         {/* <a className="btn">Button</a>  */}
-                         <div className='flex items-center gap-1'>
-                             {/* <h3>1</h3> */}
-                             <sup>{cart.length? cart.length: ''}</sup>
-                             <BsCart3 />
-                         </div>
-                       
-                         <div className='flex items-center gap-1'>
-                             {/* <h3>1</h3> */}
-                             <sup>{wish.length? wish.length: ''}</sup>
-                             <IoIosHeartEmpty />
-                         </div>
-                        
-                        
-                       
-                  
+                        <div className='flex items-center gap-1'>
+                            {/* <h3>1</h3> */}
+                            <sup>{cart?.length ? cart.length : ''}</sup>
+                            <BsCart3 />
+                        </div>
+
+                        <div className='flex items-center gap-1'>
+                            {/* <h3>1</h3> */}
+                            <sup>{wish?.length ? wish.length : ''}</sup>
+                            <IoIosHeartEmpty />
+                        </div>
+
+
+
+
                     </div>
 
 
@@ -116,41 +115,41 @@ const Navbar = () => {
                 {/* banner */}
 
                 {
-                    path !=='/dashboard' &&
+                    path !== '/dashboard' &&
                     <div className='bg-primary py-5 text-white'>
 
 
 
-                  
-
-                    <h1 className='text-center text-2xl font-bold'>{heading}</h1>
-
-                    <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-
-                    <div className='flex py-4 justify-center gap-5 items-center'>
-
-                        {
-
-                            path === '/' &&
-
-                            <a href="#products">
-                                <button
-
-                                    className='bg-white  border border-white px-4 rounded-xl py-2 text-primary'>Shop Now
-                                </button>
-
-                            </a>
 
 
-                        }
-                        
+                        <h1 className='text-center text-2xl font-bold'>{heading}</h1>
+
+                        <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+
+                        <div className='flex py-4 justify-center gap-5 items-center'>
+
+                            {
+
+                                path === '/' &&
+
+                                <a href="#products">
+                                    <button
+
+                                        className='bg-white  border border-white px-4 rounded-xl py-2 text-primary'>Shop Now
+                                    </button>
+
+                                </a>
+
+
+                            }
 
 
 
+
+
+                        </div>
 
                     </div>
-
-                     </div>
                 }
 
                 {path === '/' &&
@@ -187,20 +186,20 @@ const Navbar = () => {
 
 
 
-                
 
-            </div> 
+
+            </div>
             <div id='products' className=' pt-4'>
 
-                { 
-                   path==='/' &&
-                 
-                      <Products  ></Products>
-                  
-                    
+                {
+                    path === '/' &&
+
+                    <Products  ></Products>
+
+
                 }
 
-               
+
 
             </div>
         </>
