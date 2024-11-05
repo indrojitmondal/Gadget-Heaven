@@ -6,7 +6,7 @@ const Product = ({product}) => {
     const {product_id,product_image,product_title, price} = product;
     return (
         <div>
-             <img src={product_image} alt={product_title} />
+             <img src={product_image} className='h-[300px]' alt={product_title} />
              <h2  className='font-bold'> {product_title} </h2>
              <h3>Price: {price} </h3>
              

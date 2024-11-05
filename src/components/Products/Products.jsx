@@ -11,7 +11,7 @@ const Products = () => {
     const [activeProducts,setActiveProducts]= useState([]);
 
     useEffect( ()=>{
-        fetch('allProducts.json')
+        fetch('/allProducts.json')
         .then ( res=> res=res.json())
         .then (data =>
             { setAllProducts(data) 
@@ -23,8 +23,9 @@ const Products = () => {
     const handleCategory= category=>{
 
         console.log(category);
+        console.log('ALL:',allProducts);
 
-        const newData= allProducts.filter( p=> p.category===category );
+        const newData= allProducts.filter( p=> p.category==category );
         console.log('New Data:', newData);
 
 
