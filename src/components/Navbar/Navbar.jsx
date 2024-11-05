@@ -1,4 +1,5 @@
 
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 import bannerImage from '../../assets/banner.jpg'
@@ -60,14 +61,61 @@ const Navbar = () => {
     }, [path])
 
 
-    const links = <>
-        <li><Link to={'/'}>Home </Link></li>
+    // const links = <>
+    //     <li><Link to={'/'}>Home </Link></li>
 
-        <li>  <Link to={'/statistics'}>Statistics</Link></li>
+    //     <li>  <Link to={'/statistics'}>Statistics</Link></li>
 
-        <li>  <Link to={'/dashboard'}>Dashboard</Link></li>
+    //     <li>  <Link to={'/dashboard'}>Dashboard</Link></li>
 
-    </>
+    // </>
+
+    const links = (
+        <>
+            <li>
+                <NavLink 
+                    to="/" 
+                    // className={({ isActive }) => 
+                    //     isActive ? "text-primary font-bold" : ""
+                    // }
+                >
+                    Home
+                </NavLink>
+            </li>
+            <li>
+                <NavLink 
+                    to="/products" 
+                    className={({ isActive }) => 
+                        isActive ? "text-primary font-bold" : ""
+                    }
+                >
+                    Products
+                </NavLink>
+            </li>
+            <li>
+                <NavLink 
+                    to="/statistics" 
+                    className={({ isActive }) => 
+                        isActive ? "text-primary font-bold" : ""
+                    }
+                >
+                    Statistics
+                </NavLink>
+            </li>
+            <li>
+                <NavLink 
+                    to="/dashboard" 
+                    className={({ isActive }) => 
+                        isActive ? "text-primary font-bold" : ""
+                    }
+                >
+                    Dashboard
+                </NavLink>
+            </li>
+        </>
+    );
+    
+
     return (
         <>
             <div className={`  ${path === '/' ? 'text-white  rounded-3xl pb-10 bg-primary border-[7px] border-b1' : ''}  `}>
