@@ -195,7 +195,7 @@ const Navbar = () => {
                                     <a href="#products">
                                         <button
 
-                                            className='bg-white  border border-white px-4 rounded-[32px] py-2 text-primary'>Shop Now
+                                            className='bg-white font-bold  border border-white px-4 rounded-[32px] py-2 text-primary'>Shop Now
                                         </button>
 
                                     </a>
@@ -244,7 +244,7 @@ const Navbar = () => {
 
                     <div className='absolute left-0 top-72 right-0'>
 
-                        <div className='px-20 '>
+                        <div className='mx-20   '>
                             <div className='border-2  border-white px-4 pt-4 rounded-[32px]'>
 
                             <img src={bannerImage} className='rounded-3xl h-[400px] w-full' alt="" />
