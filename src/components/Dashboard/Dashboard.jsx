@@ -248,9 +248,14 @@ const Dashboard = () => {
                 <img className='mx-auto' src={modalImage} alt="" />
                 <h2 className='text-xl font-bold text-center'>Payment Successfully</h2>
                  
+                <div className='py-3'>
+
                 <p className='text-center'>Thanks for purchasing</p>
                  
-                <p className='text-center'>Total: {totalCost}</p>
+                 <p className='text-center'>Total: {totalCost}</p>
+
+                </div>
+               
                
          
                 <button className='mt-3 border w-full rounded-[32px] px-4 py-2 border-gray-200 bg-gray-200 text-center font-bold'  onClick={closeModal}>Close</button>
