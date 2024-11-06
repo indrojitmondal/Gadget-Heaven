@@ -24,9 +24,9 @@
 
 # 5 features of the project
 1. Home
-2. Products details
+2. Products 
 3. Statistics
 4. Dashboard 
-5. Cart/WishList 
+5. Footer 
 
 
