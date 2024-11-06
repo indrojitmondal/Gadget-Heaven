@@ -43,7 +43,7 @@ const ProductDetail = () => {
     return (
 
        <>
-          <div className='relative'>
+          <div className='relative  '>
             <div className={`  text-white  absolute left-0 right-0   rounded-3xl pb-24 bg-primary   `}>
 
                 {/* banner */}
@@ -68,7 +68,7 @@ const ProductDetail = () => {
             <div className='absolute left-0 top-24  right-0'>
 
                 <div className='px-20  '>
-                    <div className='border-2   border-white px-4 pt-4 rounded-[32px] w-10/12 bg-white text-black   mx-auto grid grid-cols-12 gap-5 items-center'>
+                    <div className='border   border-details px-4 py-4 rounded-[32px] w-10/12 bg-white text-black   mx-auto grid grid-cols-12 gap-5 items-center'>
 
                         
             
@@ -82,7 +82,7 @@ const ProductDetail = () => {
                                 <h2 className='text-lg font-bold'>{product_title}</h2>
                                 <h3>Price: ${price}</h3>
 
-                                <button className='btn'> {availability ? 'In Store' : 'Out of Stack'}  </button>
+                                <button className='border border-green-300 bg-green-200 text-green-600 font-bold rounded-[32px] px-3 py-1'> {availability ? 'In Store' : 'Out of Stack'}  </button>
 
                                 <p>{description}</p>
                                 <h3 className='font-bold'>Specification:</h3>
@@ -133,7 +133,7 @@ const ProductDetail = () => {
                                                     toast(`${product_title} is added to your wish list.`);
 
 
-                                                } : () => { }} className={`${wish.find(p_id => p_id == product_id) ? 'text-red-800 disabled' : ''}`} >  <div className='flex items-center gap-1'>   <IoIosHeartEmpty className='text-2xl' />  </div> </button>
+                                                } : () => { }} className={`${wish.find(p_id => p_id == product_id) ? 'text-red-800 disabled' : ''}`} >  <div className='flex border border-gray-200 rounded-[50%] p-2 items-center gap-1'>   <IoIosHeartEmpty className='text-2xl' />  </div> </button>
 
 
 

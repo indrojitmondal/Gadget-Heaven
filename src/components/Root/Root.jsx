@@ -17,7 +17,7 @@ const Root = () => {
     return (
         <cartContext.Provider value={{ cart, setCart }}>
         <WishContext.Provider value={{ wish, setWish }}>
-            <div>
+            <div className=''>
                 <Navbar />
                 <Outlet />
                 {/* <Footer /> */}

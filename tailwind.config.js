@@ -10,6 +10,7 @@ export default {
       colors: {
           primary:'rgb(149, 56, 226)',
           b1: 'rgb(246, 246, 246)',
+          details:'rgb(217, 217, 217)',
 
 
 

@@ -8,12 +8,12 @@ const Footer = () => {
                  <p className='text-center'>Leading the way in cutting-edge technology and innovation.</p>
              </div>
 
-             <section className='flex justify-between px-20 pt-2'>
+             <section className='flex justify-between px-20 pt-5'>
                   <div>
                          <h2 className='font-bold'>Services</h2>
 
                         
-                         <ul className='flex flex-col gap-2'>
+                         <ul className='flex flex-col gap-2 pt-4'>
                             <a href="">Product Support</a>
                             <a href="">Order Tracking</a>
                             <a href="">Shipping & Delivery</a>
@@ -25,7 +25,7 @@ const Footer = () => {
                          <h2 className='font-bold'>Company</h2>
 
                         
-                         <ul className='flex flex-col gap-2' >
+                         <ul className='flex flex-col gap-2 pt-4' >
                             <a href="">About Us</a>
                             <a href="">Careers</a>
                             <a href="">Contact</a>
@@ -39,7 +39,7 @@ const Footer = () => {
                          <h2 className='font-bold'>Legal</h2>
 
                         
-                         <ul className='flex flex-col gap-2'>
+                         <ul className='flex flex-col gap-2 pt-4'>
                             <a href="">Terms of Services</a>
                             <a href="">Privacy Policy</a>
                             <a href="">Cookie Policy</a>
