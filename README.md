@@ -11,13 +11,15 @@
 <a href='https://drive.google.com/file/d/1bvWSR1pQvmv0dt4K1GqYfvVCuFMaqprt/view'>Batch-10_Assignment-08.pdf </a>
 
 # List of React Fundamental concepts used in the project
-1. React DOM
-2. React Router
-3. React Nested Routing 
-4. React Nested Layout 
+1. React Component
+2. React Routing
+3. React Router DOM
+4. React Nested Routing 
+5. React Nested Layout
 5. React Hook
 6. React Toastify 
 7. Recharts 
+8. React Helmet-async 
 
 # What you have used for handling and managing data (context API/local storage) ? 
 - Context API 
