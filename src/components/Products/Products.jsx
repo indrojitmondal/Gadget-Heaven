@@ -3,12 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Product from '../Product/Product';
 import { Helmet } from 'react-helmet-async';
-
+import { Outlet, useLoaderData, useLocation, useNavigate } from "react-router-dom";
+import Laptop from '../Laptop/Laptop';
+import AllProducts from '../AllProducts/AllProducts';
 const Products = () => {
 
     const [activateCategory, setActiveCategory]= useState('');
     const [allProducts,setAllProducts]= useState([]);
     const [activeProducts,setActiveProducts]= useState([]);
+
+    const allData= useLoaderData();
+
+    const navigate = useNavigate();
 
     useEffect( ()=>{
         fetch('/allProducts.json')
@@ -18,6 +24,8 @@ const Products = () => {
             setActiveProducts(data)
             }
         );
+        // setAllProducts(allData) ;
+        //  setActiveProducts(data);
     },[])
 
     const handleCategory= category=>{
@@ -30,20 +38,66 @@ const Products = () => {
 
 
 
-        setActiveCategory(category);
-        setActiveProducts(newData);
+        // setActiveCategory(category);
+        // setActiveProducts(newData);
 
     }
+    const location = useLocation();
+
+
+    console.log('Path:', location.pathname);
+    const path = location.pathname;
+
+
+    useEffect(() => {
+
+
+
+        if (path === '/products/laptops') {
+            console.log('yes');
+           // setHeading('Upgrade Your Tech Accessorize with Gadget Heaven Accessories');
+
+        }
+        else if (path === '/statistics') {
+            console.log('yes');
+           // setHeading('Statistics');
+
+        }
+        else if (path === '/dashboard') {
+            console.log('yes');
+            //setHeading('Dashboard');
+
+        }
+        // else if (path==='/product') {
+        //     setHeading("Product Details")
+        // }
+
+
+    }, [path])
     return (
         <>
-        <Helmet>
-                {/* <title>Gadget | Dashboard</title> */}
-                {/* <meta name="description" content="Description of this page" /> */}
-                {/* <link rel="icon" type="image/x-icon" href="/path/to/your/favicon.ico" /> */}
+           <Helmet>
+               
                 <link rel="shortcut icon" href="https://i.ibb.co.com/hVqQxsG/favicon-16x16.png" type="image/x-icon" />
 
             </Helmet>
-         <div className='p-10'>
+
+             {/* <div className='bg-primary py-5 text-white'>
+
+
+
+
+
+                        <h1 className='text-center text-2xl font-bold'>Our Products</h1>
+
+                        <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+
+                      
+
+            </div>  */}
+
+            
+          <div className='p-10'>
             <h1 className='text-2xl font-bold text-center'>Explore Cutting-Edge Gadgets</h1>
 
             <section className='grid grid-cols-12 gap-8'>
@@ -55,11 +109,36 @@ const Products = () => {
 
                     
                    <div className='border border-gray-300 rounded-xl p-4'> 
-                      <h2 className='border text-center border-primary rounded-xl px-3 py-2 bg-primary text-white'>All Products</h2> 
+                      {/* <h2 className='border text-center border-primary rounded-xl px-3 py-2 bg-primary text-white'>All Products</h2>  */}
 
                        <div className='pt-5 flex flex-col gap-3'>
-                            <button onClick={()=>{handleCategory('Laptop')}}  className='border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black'>Laptops</button>
-                            <button onClick={()=>{handleCategory('Phones')}} className='border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black'>Phones</button>
+                       
+                       <button onClick={()=>{
+                                navigate('/products');
+                                handleCategory('Laptop')
+                               
+                                }} 
+                                 className={`border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black ${((path === '/products')||(path==='/'))?'bg-primary text-white':''}`}
+                                 >All Products
+                                 </button>
+
+                            <button onClick={()=>{
+                                navigate('/products/laptops');
+                                handleCategory('Laptop')
+                               
+                                }} 
+                                 className={`border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black ${path === '/products/laptops'?'bg-primary text-white':''}`}
+                                 >Laptops
+                                 </button>
+                            <button onClick={()=>{
+                                 navigate('/products/phones');
+                                handleCategory('Phones')
+                                }}
+                                //  className='border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black'
+                                className={`border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black ${path === '/products/phones'?'bg-primary text-white':''}`}
+                                 
+                                 >Phones</button>
+                           
                             <button onClick={()=>{handleCategory('Accessories')}} className='border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black'>Accessories</button>
                             <button onClick={()=>{handleCategory('Smart Watches')}} className='border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black'>Smart Watches</button>
                             <button onClick={()=>{handleCategory('MacBook')}} className='border text-center border-gray-300 rounded-xl px-3 py-2 bg-gray-300 text-black'>MacBook</button>
@@ -69,8 +148,9 @@ const Products = () => {
                    </div>
 
                 </div>
-
-                <div className="content col-span-10">
+               {
+                 path === '/'? 
+                   <div className="content col-span-10">
                     
                     <div className='grid grid-cols-3 gap-5'>
 
@@ -81,10 +161,19 @@ const Products = () => {
 
                     </div>
 
+                    {/* <h1 className='text-xl text-red-500'>Hello....</h1> */}
+
+
                 </div>
 
+                  : <Outlet />
+               }
+                
+
             </section>
-        </div>
+        </div> 
+
+        {/* <Outlet />  */}
         </>
     );
 };

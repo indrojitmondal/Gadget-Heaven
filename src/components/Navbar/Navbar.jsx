@@ -31,7 +31,7 @@ const Navbar = () => {
     const location = useLocation();
 
 
-    console.log('Path:', location.pathname);
+    // console.log('Path:', location.pathname);
     const path = location.pathname;
 
 
@@ -54,9 +54,9 @@ const Navbar = () => {
             setHeading('Dashboard');
 
         }
-        else if (path.includes('/product')) {
-            setHeading("Product Details")
-        }
+        // else if (path==='/product') {
+        //     setHeading("Product Details")
+        // }
 
 
     }, [path])
@@ -171,7 +171,7 @@ const Navbar = () => {
                 {/* banner */}
 
                 {
-                    path !== '/dashboard' &&
+                    path == '/' &&
                     <div className='bg-primary py-5 text-white'>
 
 
@@ -181,7 +181,7 @@ const Navbar = () => {
                         <h1 className='text-center text-2xl font-bold'>{heading}</h1>
 
                         <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-
+             
                         <div className='flex py-4 justify-center gap-5 items-center'>
 
                             {

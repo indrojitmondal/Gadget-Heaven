@@ -35,6 +35,20 @@ const Statistics = () => {
                 <link rel="shortcut icon" href="https://i.ibb.co.com/hVqQxsG/favicon-16x16.png" type="image/x-icon" />
 
             </Helmet>
+
+            <div className='bg-primary py-5 text-white'>
+
+
+
+
+
+                        <h1 className='text-center text-2xl font-bold'>Statistics</h1>
+
+                        <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+             
+                       
+
+                    </div>
             <div style={{ width: '100%', height: '400px' }}>
                 <ResponsiveContainer width="100%" height="100%">
                     <ComposedChart
