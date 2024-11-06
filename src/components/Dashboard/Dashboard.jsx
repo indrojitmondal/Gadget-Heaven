@@ -198,8 +198,8 @@ const Dashboard = () => {
                                     const sortCarts= [...cartProduct].sort((a,b)=>(b.price - a.price));
                                     setCartProduct(sortCarts);
                                   }} 
-                                 className='btn'>Short by Price</button>
-                                <button onClick={openModal} className='btn'>Purchase</button>
+                                 className='border border-yellow-700 text-primary rounded-[32px] font-bold px-4 py-2'>Short by Price</button>
+                                <button onClick={openModal} className='border border-primary text-white bg-primary  rounded-[32px] font-bold px-4 py-2'>Purchase</button>
                             </div>
                         </div>
                         <div>
