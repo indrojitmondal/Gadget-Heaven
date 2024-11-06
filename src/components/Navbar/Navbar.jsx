@@ -75,19 +75,19 @@ const Navbar = () => {
     const links = (
         <>
             <li>
-                <NavLink 
-                    to="/" 
-                    // className={({ isActive }) => 
-                    //     isActive ? "text-primary font-bold" : ""
-                    // }
+                <NavLink
+                    to="/"
+                // className={({ isActive }) => 
+                //     isActive ? "text-primary font-bold" : ""
+                // }
                 >
                     Home
                 </NavLink>
             </li>
             <li>
-                <NavLink 
-                    to="/products" 
-                    className={({ isActive }) => 
+                <NavLink
+                    to="/products"
+                    className={({ isActive }) =>
                         isActive ? "text-primary font-bold" : ""
                     }
                 >
@@ -95,9 +95,9 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink 
-                    to="/statistics" 
-                    className={({ isActive }) => 
+                <NavLink
+                    to="/statistics"
+                    className={({ isActive }) =>
                         isActive ? "text-primary font-bold" : ""
                     }
                 >
@@ -105,9 +105,9 @@ const Navbar = () => {
                 </NavLink>
             </li>
             <li>
-                <NavLink 
-                    to="/dashboard" 
-                    className={({ isActive }) => 
+                <NavLink
+                    to="/dashboard"
+                    className={({ isActive }) =>
                         isActive ? "text-primary font-bold" : ""
                     }
                 >
@@ -116,7 +116,7 @@ const Navbar = () => {
             </li>
         </>
     );
-    
+
 
     return (
         <>
@@ -127,138 +127,145 @@ const Navbar = () => {
                 <link rel="shortcut icon" href="https://i.ibb.co.com/hVqQxsG/favicon-16x16.png" type="image/x-icon" />
 
             </Helmet>
-            <div className={`  ${path === '/' ? 'text-white  rounded-3xl pb-10 bg-primary border-[7px] border-b1' : ''}  `}>
+            <div className='relative'>
+                <div className={`  ${path === '/' ? 'text-white  absolute left-0 right-0   rounded-[32px] pb-24 bg-primary ' : ''}  `}>
 
-                {/* text-white rounded-3xl bg-primary border-[7px] border-b1 */}
-
-
-                <div className=" navbar-section p-10 flex justify-between">
+                    {/* text-white rounded-3xl bg-primary border-[7px] border-b1 */}
 
 
-                    <div className="">
+                    <div className=" navbar-section p-10 flex justify-between">
 
 
-                        <h1 className='text-xl font-bold'>Gadget Heaven</h1>
-                    </div>
-                    <div className="flex">
-                        <ul className=" flex gap-10 px-1">
+                        <div className="">
 
-                            {links}
-                        </ul>
-                    </div>
-                    <div className="flex text-black items-center gap-4 pr-4">
-                        {/* <a className="btn">Button</a>  */}
-                        <div className='flex border border-white bg-white p-2 rounded-[50%] items-center gap-1'>
-                            {/* <h3>1</h3> */}
-                            <sup>{cart?.length ? cart.length : ''}</sup>
-                            <BsCart3 className='font-bold' />
+
+                            <h1 className='text-xl font-bold'>Gadget Heaven</h1>
+                        </div>
+                        <div className="flex">
+                            <ul className=" flex gap-10 px-1">
+
+                                {links}
+                            </ul>
+                        </div>
+                        <div className="flex text-black items-center gap-4 pr-4">
+                            {/* <a className="btn">Button</a>  */}
+                            <div className='flex border border-white bg-white p-2 rounded-[50%] items-center gap-1'>
+                                {/* <h3>1</h3> */}
+                                <sup>{cart?.length ? cart.length : ''}</sup>
+                                <BsCart3 className='font-bold' />
+                            </div>
+
+                            <div className='flex border border-white bg-white p-2  rounded-[50%] items-center gap-1'>
+                                {/* <h3>1</h3> */}
+                                <sup>{wish?.length ? wish.length : ''}</sup>
+                                <IoIosHeartEmpty className='font-bold' />
+                            </div>
+
+
+
+
                         </div>
 
-                        <div className='flex border border-white bg-white p-2  rounded-[50%] items-center gap-1'>
-                            {/* <h3>1</h3> */}
-                            <sup>{wish?.length ? wish.length : ''}</sup>
-                            <IoIosHeartEmpty className='font-bold' />
-                        </div>
-
-
 
 
                     </div>
+
+                    {/* banner */}
+
+                    {
+                        path == '/' &&
+                        <div className='bg-primary py-5 text-white'>
+
+
+
+
+
+                            <h1 className='text-center text-2xl font-bold'>{heading}</h1>
+
+                            <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+
+                            <div className='flex py-4 justify-center gap-5 items-center'>
+
+                                {
+
+                                    path === '/' &&
+
+                                    <a href="#products">
+                                        <button
+
+                                            className='bg-white  border border-white px-4 rounded-[32px] py-2 text-primary'>Shop Now
+                                        </button>
+
+                                    </a>
+
+
+                                }
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
                 </div>
 
-                {/* banner */}
+                {path === '/' &&
 
-                {
-                    path == '/' &&
-                    <div className='bg-primary py-5 text-white'>
+                    <div className='absolute left-0 top-72 right-0'>
+
+                        <div className='px-20 '>
+                            <img src={bannerImage} className='border-2 border-white px-4 pt-4 rounded-[32px] h-[400px] w-full' alt="" />
+                        </div>
 
 
-
-
-
-                        <h1 className='text-center text-2xl font-bold'>{heading}</h1>
-
-                        <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
-             
-                        <div className='flex py-4 justify-center gap-5 items-center'>
+                        <div id='products' className=' pt-4'>
 
                             {
-
                                 path === '/' &&
 
-                                <a href="#products">
-                                    <button
-
-                                        className='bg-white  border border-white px-4 rounded-[32px] py-2 text-primary'>Shop Now
-                                    </button>
-
-                                </a>
+                                <Products  ></Products>
 
 
                             }
 
 
 
-
-
-                        </div>
-
-                    </div>
-                }
-
-                {path === '/' &&
-
-                    <div className=''>
-
-                        <div className='px-20'>
-                            <img src={bannerImage} className='h-[400px] w-full' alt="" />
                         </div>
 
                     </div>
 
                 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
-            <div id='products' className=' pt-4'>
 
-                {
-                    path === '/' &&
-
-                    <Products  ></Products>
-
-
-                }
-
-
-
-            </div>
         </>
 
     );
