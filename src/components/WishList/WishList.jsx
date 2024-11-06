@@ -8,7 +8,7 @@ const WishList = ({ product, handleAddToCart, handleRemoveWish }) => {
             <div className='flex gap-4 items-center'>
                 <img className='rounded-2xl h-[300px] w-[300px]' src={product_image} alt="" />
                 <div className='flex flex-col '>
-                    <h3 className='font-bold'>{product_title}</h3>
+                    <h3 className='text-lg font-bold'>{product_title}</h3>
                     <p>{description}</p>
                     <h4 className='font-bold'>Price: ${price}</h4>
 
