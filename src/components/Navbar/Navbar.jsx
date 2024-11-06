@@ -128,7 +128,7 @@ const Navbar = () => {
 
             </Helmet>
             <div className='relative'>
-                <div className={`  ${path === '/' ? 'text-white  absolute left-0 right-0   rounded-[32px] pb-24 bg-primary ' : ''}  `}>
+                <div className={`  ${path === '/' ? 'text-white  absolute left-0 right-0   rounded-3xl pb-24 bg-primary ' : ''}  `}>
 
                     {/* text-white rounded-3xl bg-primary border-[7px] border-b1 */}
 
@@ -243,7 +243,12 @@ const Navbar = () => {
                     <div className='absolute left-0 top-72 right-0'>
 
                         <div className='px-20 '>
-                            <img src={bannerImage} className='border-2 border-white px-4 pt-4 rounded-[32px] h-[400px] w-full' alt="" />
+                            <div className='border-2  border-white px-4 pt-4 rounded-[32px]'>
+
+                            <img src={bannerImage} className='rounded-3xl h-[400px] w-full' alt="" />
+                       
+                            </div>
+                          
                         </div>
 
 
