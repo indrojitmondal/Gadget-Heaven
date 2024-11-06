@@ -82,7 +82,7 @@ const Products = () => {
 
             </Helmet>
 
-             {/* <div className='bg-primary py-5 text-white'>
+             <div className='bg-primary py-5 text-white'>
 
 
 
@@ -94,7 +94,7 @@ const Products = () => {
 
                       
 
-            </div>  */}
+            </div> 
 
             
           <div className='p-10'>
