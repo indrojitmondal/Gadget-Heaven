@@ -1,6 +1,7 @@
 
 
 
+
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 import bannerImage from '../../assets/banner.jpg'
@@ -11,6 +12,7 @@ import Products from '../Products/Products';
 import { WishContext, cartContext } from '../Root/Root';
 import { IoIosHeartEmpty } from "react-icons/io";
 import { Helmet } from 'react-helmet-async';
+import Footer from '../Footer/Footer';
 // export const cartContext = createContext(0);
 
 
@@ -265,6 +267,13 @@ const Navbar = () => {
 
 
                         </div>
+
+                        
+                           
+                            <Footer></Footer>
+                        
+
+                        
 
                     </div>
 
