@@ -8,6 +8,7 @@ import { BsCart3 } from "react-icons/bs";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { toast } from "react-toastify";
 import Footer from '../Footer/Footer';
+import { Helmet } from 'react-helmet-async';
 
 
 const ProductDetail = () => {
@@ -42,36 +43,36 @@ const ProductDetail = () => {
     //  const [cart,setCart] = useContext(cartContext);
     return (
 
-       <>
-          <div className='relative  '>
-            <div className={`  text-white  absolute left-0 right-0   rounded-3xl pb-24 bg-primary   `}>
+        <>
+            <div className='relative  '>
+                <div className={`  text-white  absolute left-0 right-0   rounded-3xl pb-24 bg-primary   `}>
 
-                {/* banner */}
+                    {/* banner */}
 
-                <div className='bg-primary py-5 text-white'>
-
-
+                    <div className='bg-primary py-5 text-white'>
 
 
 
-                    <h1 className='text-center text-2xl font-bold'>Product Details</h1>
 
-                    <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
 
-                   
+                        <h1 className='text-center text-2xl font-bold'>Product Details</h1>
+
+                        <p className='text-center'>Explore the latest gadgets that will take your experience to the next level. From smart devices to the coolest accessories, we have it all!</p>
+
+
+
+                    </div>
+
 
                 </div>
 
+                <div className='absolute left-0 top-24  right-0'>
 
-            </div>
+                    <div className='px-20  '>
+                        <div className='border   border-details px-4 py-4 rounded-[32px] w-10/12 bg-white text-black   mx-auto grid grid-cols-12 gap-5 items-center'>
 
-            <div className='absolute left-0 top-24  right-0'>
 
-                <div className='px-20  '>
-                    <div className='border   border-details px-4 py-4 rounded-[32px] w-10/12 bg-white text-black   mx-auto grid grid-cols-12 gap-5 items-center'>
 
-                        
-            
                             <div className=' col-span-5'>
 
                                 <img className='h-[400px]' src={product_image} alt={product_title} />
@@ -97,7 +98,7 @@ const ProductDetail = () => {
 
 
 
-                              
+
 
                                 <div className='flex items-center gap-3'>
 
@@ -143,27 +144,34 @@ const ProductDetail = () => {
 
 
                             </div>
-                       
-                       
 
 
 
+
+
+
+                        </div>
 
                     </div>
+
+
+
+
+                    <Footer></Footer>
+
 
                 </div>
 
 
-
-
-                <Footer></Footer>
-
-
             </div>
+            <Helmet>
 
+               {/* {
+                 <title>Gadget Heaven | Product Details</title>
+               } */}
 
-          </div>
-       </>
+            </Helmet>
+        </>
 
     );
 };
